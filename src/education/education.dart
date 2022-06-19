@@ -1,6 +1,7 @@
 void main1() {
   //itar
   // Ctrl + Shift + F   - поиск по файлам
+  print([for(var i = 1; i<10; i++)if(i%2==0) i ]);
 
 
   String name1 = "Tom";

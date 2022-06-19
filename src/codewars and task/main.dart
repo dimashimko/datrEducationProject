@@ -1,14 +1,21 @@
-import '012 (Num) Primes in numbers.dart';
 
 main() {
   /* my solution */
   /*  The clever solution of other programmers */
-
-
-  var i = 100;
-  for(int j = 0; j < 10; j++) {
-    i = i<<1;
-    print(i);
+  RegExp exp = RegExp("[^:;\\-~)D]");
+  var str = ":);(;}}}:D";
+  print(exp.allMatches(str).length);
+  Iterable<Match> matches = exp.allMatches(str);
+  for (final Match m in matches) {
+    String match = m[0]!;
+    print(match);
   }
 
+/*  RegExp exp = RegExp('[^a]');
+  var str = 'aabaaccaa';
+  print(exp.allMatches(str).length);*/
+
+
+
 }
+

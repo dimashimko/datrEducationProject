@@ -1,5 +1,4 @@
 
-
 main(){
   print(oddOrEven([1, 1]) == "even");
   print(oddOrEven([1, 3])== "even");
