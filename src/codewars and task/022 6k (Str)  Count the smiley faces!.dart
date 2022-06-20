@@ -15,19 +15,18 @@ void test(List<String> arr, int answer) {
   print(' $correct ${correct ? '☑ Test Passed' : '$result is no $answer'}');
 }
 
+
+/* my solution */
+int countSmileys1(List<String> arr) => arr.where((e) => RegExp('([:;][-~][)D]|[:;][)D])').allMatches(e).length == 1).length;
+
+/*  The clever code of other programmers */
+int countSmileys2(List<String> arr) =>
+    RegExp(r"[:;](-?|~?)[\)D]").allMatches((arr.join(''))).length;
+
+/*  The clever code of other programmers */
 int countSmileys(List<String> arr) {
-  int counter = 0;
-  for (var s in arr) {
-
-    RegExp exp = RegExp('[^:;\\-~)D]');
-    var str = ':) ;( ;} :D 132';
-    print(exp.allMatches(str, 8).length);
-    Iterable  matches = exp.allMatches(str, 8);
-
-    // if(s.replaceAll(RegExp(r'[:;\-~)D]'), '').length==0) counter++;
-    //  print(s.allMatches(string).length==0 ? "y: $s": "n: $s");
-  }
-  return counter;
+  RegExp rgx = new RegExp("[:;]{1}[~-]?[)D]{1}");
+  return rgx.allMatches(arr.join(" ")).length;
 }
 
 
