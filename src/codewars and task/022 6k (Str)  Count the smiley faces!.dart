@@ -20,11 +20,11 @@ void test(List<String> arr, int answer) {
 int countSmileys1(List<String> arr) => arr.where((e) => RegExp('([:;][-~][)D]|[:;][)D])').allMatches(e).length == 1).length;
 
 /*  The clever code of other programmers */
-int countSmileys2(List<String> arr) =>
-    RegExp(r"[:;](-?|~?)[\)D]").allMatches((arr.join(''))).length;
+int countSmileys(List<String> arr) =>
+    RegExp(r"[:;](-?|~?)[)D]").allMatches((arr.join(''))).length;
 
 /*  The clever code of other programmers */
-int countSmileys(List<String> arr) {
+int countSmileys3(List<String> arr) {
   RegExp rgx = new RegExp("[:;]{1}[~-]?[)D]{1}");
   return rgx.allMatches(arr.join(" ")).length;
 }

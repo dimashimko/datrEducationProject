@@ -2,10 +2,10 @@
 import 'dart:math';
 
 main() {
-  int amountCards = 10;
+  int amountCards = 20;
   int amountNumbersInCard = 5;
   int amountNumbersInTotal = amountCards * amountNumbersInCard;
-  int rangeMax = 50;
+  int rangeMax = 100;
 
   var cards = List<Card>(amountCards);
   // List<int> totalSet = [5,7,6,17,8,    19,15,18,3,4,    14,11,10,0,12,     13,1,2,16,9];

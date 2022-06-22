@@ -26,7 +26,7 @@ String longest(String a, String b) {
   return resultLine;
 }
 
-/*  The clever solution of other programers */
+/*  The clever solution of other programmers */
 String longest2(String a, String b) {
   var strings = (a + b).split('');
   strings.sort();
@@ -34,5 +34,5 @@ String longest2(String a, String b) {
   return strings.toSet().join();
 }
 
-/*  The clever solution of other programers */
+/*  The clever solution of other programmers */
 longest3(a, b) => (((a + b).split('').toSet().toList())..sort()).join();
