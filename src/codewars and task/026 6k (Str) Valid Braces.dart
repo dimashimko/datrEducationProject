@@ -1,4 +1,3 @@
-
 main() {
   doTest('()', true);
   doTest('([{}])', true);
@@ -16,31 +15,46 @@ void doTest(String braces, bool answer) {
       ' $correct ${correct ? '☑ Test Passed' : 'in $braces => $result  is no $answer'}');
 }
 
-
-bool validBraces(String braces) {
+/* my solution */
+bool validBraces1(String braces) {
   int l1 = 0;
-  int l2 = braces.length;
-  while (l1!=l2){
-    l1 = l2;
-    braces.replaceAll(RegExp(r'\(\)'), 'é');
-    
+  while (l1 != braces.length) {
+    l1 = braces.length;
+    braces = braces.replaceAll(RegExp(r'(\(\)|\[\]|\{\})'), '');
   }
-  return false;
+  return braces.length == 0;
+}
+
+/*  The clever solution of other programmers */
+bool validBraces2(String braces) {
+  String s = braces;
+  var regex = RegExp(r'(\(\)|\[\]|\{\})');
+  while(regex.hasMatch(s))
+    s = s.replaceFirst(regex,'');
+  return s.isEmpty;
 }
 
 
-bool validBraces2(String braces) {
-  int a = 0;
-  int b = 0;
-  int c = 0;
-  for(final element in braces.split('')){
-    if(element == '(') a++;
-    if(element == ')') a--;
-    if(element == '[') b++;
-    if(element == ']') b--;
-    if(element == '[') c++;
-    if(element == ']') c--;
-    if(a<0 || b<0 || c<0) break;
+/*  The clever solution of other programmers */
+// No clever but use stack and switch case
+bool validBraces(String s) {
+  var m = {')': '(', ']': '[', '}': '{'};
+  var stack = [];
+  for (var c in s.split('')) {
+    switch (c) {
+      case '(':
+      case '[':
+      case '{':
+        stack.add(c);
+        break;
+
+      case ')':
+      case ']':
+      case '}':
+        if (stack.isEmpty) return false;
+        if (stack.removeLast() != m[c]) return false;
+        break;
+    }
   }
-  return (a==0 && b==0 && c==0);
+  return stack.isEmpty;
 }

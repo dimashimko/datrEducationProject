@@ -2,8 +2,8 @@
 import 'dart:math';
 
 main() {
-  int amountCards = 20;
-  int amountNumbersInCard = 5;
+  int amountCards = 24;
+  int amountNumbersInCard = 4;
   int amountNumbersInTotal = amountCards * amountNumbersInCard;
   int rangeMax = 100;
 
