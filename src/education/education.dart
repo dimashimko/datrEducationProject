@@ -4,6 +4,21 @@ void main1() {
   print([for(var i = 1; i<10; i++)if(i%2==0) i ]);
 
 
+
+  // class Person{
+  // String name;
+  // int age = 1;
+  // Person(this.name, age){
+
+
+  // так можна!
+  print('cat' 'dog');
+
+  // крута ініціалізація
+  var evenNumbers = <int>[];
+
+
+
   String name1 = "Tom";
   int numInt = 45;
 
