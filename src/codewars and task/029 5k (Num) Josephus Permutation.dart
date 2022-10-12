@@ -14,7 +14,7 @@ void test(List items, int k, List answer) {
 }
 
 /* my solution */
-List josephus1(final List items, final int k) {
+List josephus(final List items, final int k) {
   List result = [];
   int index = 0;
   while(items.length >0) {
@@ -26,7 +26,7 @@ List josephus1(final List items, final int k) {
 
 
 /* my solution */
-List josephus(final List items, final int k) {
+List josephus2(final List items, final int k) {
   if(items.length == 0) return [];
   Set<Man> mans = {};
   Man a = Man(null, 0);

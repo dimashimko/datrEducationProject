@@ -5,12 +5,12 @@ Future getMessage(int i) {
 }
 
 void main() {
-  // test1();
+  test1();
   // test2();
   // test3(); //chain 'then'
   // test4(); // catchError  with  (second parameters - condition)
   // test5(); //whenComplete
-  test6(); //  async и await
+  // test6(); //  async и await
 }
 
 void test6() {}

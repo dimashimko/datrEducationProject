@@ -4,16 +4,17 @@ void main (){
   Employee bob = Employee._();
   Employee john = Employee._();
   print("Retirenment age: ${Employee.retirenmentAge}");
-  // bob.age = 50;
-  // john.age = 55;
   bob.checkAge();
-  john.checkAge();
+  Employee.retirenmentAge = 50;
+  bob.checkAge();
+  // john.checkAge();
 }
+
 class Employee{
 
   String name = '';
   int age = 18;
-  static const int retirenmentAge = 65;
+  static  int retirenmentAge = 65;
 
   Employee._();
   static final Employee em = Employee._();

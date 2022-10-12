@@ -39,8 +39,12 @@ Future<String> getMessage() {
 }
 
 void main () {
-  doWork();
+  foo();
   print("Выполнение функции main");  // 2
+}
+
+foo(){
+  doWork();
 }
 
 

@@ -1,21 +1,27 @@
-void main() {
-  Employee bob = Employee();
-  bob.name = "Bob";
+void main (){
 
-  var b = 1;
-  var v = "gdf";
-
-  bob.display(b);
-  bob.display(v);
-  bob.display(bob.name);
+  Employee bob = Employee("Bob", "Google");
+  bob.display();
 }
 
-class Person {
-  String name = '';
+class Person{
 
-  void display(dynamic a) {
-    print(a);
+  String name = "";
+  Person(this.name);
+
+  void display(){
+    print("Name: $name");
   }
 }
+class Employee extends Person{
 
-class Employee extends Person {}
+  String company = "";
+
+  Employee(name, this.company) : super(name);
+
+  @override
+  void display(){
+    super.display();    // Вызов реализации из класса Person
+    print("Company: $company");
+  }
+}

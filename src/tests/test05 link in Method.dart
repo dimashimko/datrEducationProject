@@ -1,15 +1,15 @@
 main(){
   String a = 'a';
-  print(a);
+  print(a); //
   cleaner(a);
-  print(a);
+  print(a); //
 
   var bob = Person();
   bob.name = "Bob";
   bob.age = 20;
-  print(bob);
+  print(bob); // age:20 name:Bob
   cleaner2(bob);
-  print(bob);
+  print(bob); //age:0 name:****
 }
 
  void cleaner(String s){
