@@ -1,5 +1,5 @@
 main() {
-  int height = 6;
+  int height = 8;
   for (int i = 0; i < height; i++) {
     String newLine = '';
 

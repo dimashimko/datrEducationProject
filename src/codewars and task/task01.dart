@@ -1,20 +1,20 @@
+List<String> capitalize(String x) {
+  String result1 = '';
+  String result2 = '';
+  List<String> list = x.split('');
+  for (int i = 0; i < x.length; i++) {
+    if (i % 2 == 0) {
+      result1 += list[i].toString().toUpperCase();
+      result2 += list[i].toString();
+    } else {
+      result1 += list[i].toString();
+      result2 += list[i].toString().toUpperCase();
+    }
+  }
+  return [result1, result2];
+}
+
 main() {
-  test([0, 1, 2, 2, 3, 0, 4, 2], 2, [0, 1, 3, 0, 4]);
-  test([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 2, [1, 3, 4, 5, 6, 7, 8, 9, 10]);
-  test([2], 2, []);
-}
-
-void test(List items, int k, List answer) {
-  List result = removeOccurrences(items, k);
-  bool correct = result.join('') == answer.join('');
-  print(
-      ' $correct ${correct ? '☑ Test Passed' : ' $result  is no $answer'}');
-}
-
-List removeOccurrences(final List items, final int pattern){
-  List modifiedList = items.where((e) => e!=pattern).toList();
-  print('Pattern: $pattern');
-  print('Original list: $items');
-  print('Modified list: $modifiedList');
-  return modifiedList;
+  print(capitalize('abcdef'));
+  print(capitalize('abcdef'));
 }

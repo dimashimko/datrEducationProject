@@ -1,15 +1,16 @@
 import 'dart:math';
 
 main() {
-  int amountCards = 6;
+  int amountCards = 4;
   int amountNumbersInCard = 5;
   int amountNumbersInTotal = amountCards * amountNumbersInCard;
   int rangeMax = 125;
 
-  var cards = List<Card>.filled(amountCards, Card(0));
+  var cards = List<Card>.filled(amountCards, Card(1));
+  print('*** cards: $cards');
   // List<int> totalSet = [5,7,6,17,8,    19,15,18,3,4,    14,11,10,0,12,     13,1,2,16,9];
-  // List<int> totalSet = [0,1,2,3,4,     5,6,7,8,9,     10,11,12,13,14,     15,16,17,18,19];
-  List<int> totalSet = generateLineOfNumbers(amountNumbersInTotal, rangeMax);
+  List<int> totalSet = [0,1,2,3,4,     5,6,7,8,9,     10,11,12,13,14,     15,16,17,18,19];
+  // List<int> totalSet = generateLineOfNumbers(amountNumbersInTotal, rangeMax);
   // print(totalSet);
 
   // set own set
@@ -51,19 +52,6 @@ main() {
   for (var c in cards) {
     print(c.printAnswer());
   }
-
-
-/*  for (var e in totalSet) {
-    print('$e~/$amountNumbersInCard=${e ~/ amountNumbersInCard}');
-  }*/
-  print('');
-/*  for (var e in totalSet) {
-    print('$e%$amountNumbersInCard=${e % amountNumbersInCard}');
-  }*/
-
-/*  print('');
-  var isTaken = List<bool>.generate(amountNumbersInTotal, (i) => false);
-  print(isTaken);*/
 }
 
 
